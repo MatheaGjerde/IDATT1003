@@ -4,7 +4,7 @@ public class OppgaveKlient{
     public static void main(String[] args) {
         Oppgaveoversikt oversikt = new Oppgaveoversikt(10);
 
-        oversikt.registrerStudent("Anna", 3);
+        oversikt.registrerStudent("Mathea", 3);
         oversikt.registrerStudent("Per", 5);
         oversikt.registrerStudent("Ola", 2);
 
@@ -12,8 +12,8 @@ public class OppgaveKlient{
 
         System.out.println("Per har " + oversikt.getAntOppgForStudent("Per") + " oppgaver godkjent.");
 
-        oversikt.okOppgForStudent("Anna", 2);
-        System.out.println("Anna har en økning på 2" );
+        oversikt.okOppgForStudent("Mathea", 2);
+        System.out.println("Mathea har en økning på 2" );
 
         System.out.println("\nEtter oppdatering:");
         System.out.println(oversikt);
