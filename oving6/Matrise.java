@@ -1,6 +1,6 @@
 
 public class Matrise {
-    private double[][] balances;
+    private final double[][] balances;
     
     public Matrise(double[][] balances){ //kontruktøren tar inn en todimensjonal array
         int rader = balances.length; //teller hvor mange rader det er

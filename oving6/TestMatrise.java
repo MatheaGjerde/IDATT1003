@@ -1,12 +1,14 @@
 public class TestMatrise {
     public static void main(String[] args) {
         double[][] aBalance = {
-            {1, 2},
-            {4, 5}
+            {1, 2, 3},
+            {4, 5, 3},
+            {7, 5, 4}
         };
         double[][] bBalance = {
-            {7, 8},
-            {10, 11}
+            {7, 8, 9},
+            {10, 11, 6},
+            {4, 8, 7}
         };
         Matrise A = new Matrise(aBalance);
         Matrise B = new Matrise(bBalance);
