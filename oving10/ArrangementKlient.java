@@ -20,6 +20,7 @@ public class ArrangementKlient{
             System.out.println("3. Finn arrangementer på dato");
             System.out.println("4. Finn arrangementer innen tidsintervall");
             System.out.println("5. Vis alle arrangementer sortert");
+            System.out.println("6. Vis alle arrangementer");
             System.out.println("0. Avslutt");
             System.out.print("Velg et alternativ: ");
             valg = sc.nextInt();
@@ -82,6 +83,11 @@ public class ArrangementKlient{
                         System.out.println(a);
                     }
                     break;
+                case 6: 
+                    System.out.println("\nListe over alle arrangementer");
+                    for (Arrangement a : register.getArrangementer()){
+                        System.out.println(a);
+                    }
 
                 case 0:
                     System.out.println("Avslutter programmet.");
