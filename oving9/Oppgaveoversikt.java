@@ -1,7 +1,7 @@
 package oving9;
 
 public class Oppgaveoversikt{
-    private Student[] studenter;
+    private final Student[] studenter;
     private int antStud = 0;
 
 public Oppgaveoversikt(int maksAntStudenter){
