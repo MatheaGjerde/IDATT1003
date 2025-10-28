@@ -1,7 +1,7 @@
 package oving9;
 
 public class Student{
-    private String navn;
+    private final String navn;
     private int antOppg;
 
 public Student(String navn, int antOppg){
