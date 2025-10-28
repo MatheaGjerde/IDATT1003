@@ -1,12 +1,12 @@
 package oving10;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ArrangementRegister{
-    private List<Arrangement> arrangementer;
+    private final List<Arrangement> arrangementer;
 
     public ArrangementRegister(){
         arrangementer = new ArrayList<>();
