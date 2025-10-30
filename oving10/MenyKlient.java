@@ -1,5 +1,7 @@
 package oving10;
 
+import java.util.List;
+
 public class MenyKlient{
     public static void main(String[] args) {
         MenyRegister register = new MenyRegister();
@@ -28,7 +30,7 @@ public class MenyKlient{
             register.addRettToMeny(mcFlurry, dessertmeny);
             register.addRettToMeny(salat, lunsjmeny);
 
-            
+            System.out.println("Alle retter: ");
             for (Rett a : register.getAlleRetter()){
                 System.out.println(a);
             }
@@ -37,5 +39,31 @@ public class MenyKlient{
                 System.out.println(b);
             }
 
+
+            System.out.println("\n Finn rett med navn:");
+            register.finnRett("Big Mac");
+
+            System.out.println("\n Finn rett med Type: ");
+            List<Rett> desserter = register.finnRettMType("Hovedrett");
+
+            if (desserter.isEmpty()) {
+                System.out.println("Fant ingen desserter");
+            } else {
+                for (Rett r : desserter) {
+                    System.out.println(r);
+                }
+            }
+
+            System.out.println("\nFinn menyer med totalpris: ");
+            List<Meny> mellom100og200 = register.finnMenyerMedTotalpris(100, 200);
+
+            if (mellom100og200.isEmpty()) {
+                System.out.println("Fant ingen menyer mellom 100 og 200 kr.");
+            } else {
+                for (Meny m : mellom100og200) {
+                    System.out.println(m.getMenyNavn() + " - totalpris: " + m.getTotalPris() + " kr");
+                }
+            }
+                
     }
 }

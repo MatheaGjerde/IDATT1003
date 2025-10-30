@@ -20,6 +20,14 @@ public class Meny{
     public void leggTilRett(Rett r) {
     retter.add(r);
     }
+    public double getTotalPris() {
+        double sum = 0;
+        for (Rett r : retter) {
+            sum += r.getPris();
+        }
+        return sum;
+    }
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
