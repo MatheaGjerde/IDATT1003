@@ -44,6 +44,23 @@ public class Eiendommer{
     public String getEier(){ 
         return eier;
     }
+    public void setBruksnr(String bruksnr){
+        this.bruksn = bruksn;
+    }
+    public void setAreal(double areal) {
+        if (areal > 0){
+            this.areal = areal;
+        } else{
+            throw new IllegalArgumentException("Areal må være større enn 0.");
+        }
+    }
+    public void setEier(String eier){
+        if (eier != null && !eier.trim().isEmpty()){
+            this.eier = eier;
+        } else{
+            throw new IllegalArgumentException("Eier kan ikke være tom.");
+        }
+    }
 
     @Override
     public String toString(){
