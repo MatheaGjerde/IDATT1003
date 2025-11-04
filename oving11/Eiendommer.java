@@ -5,7 +5,7 @@ public class Eiendommer{
     private String kommunenavn;
     private int gnr;
     private int bnr;
-    private String bruksn; //kan være null
+    private String bruksnavn; //kan være null
     private double areal;
     private String eier;
 
@@ -13,12 +13,12 @@ public class Eiendommer{
         this(kommunenr, kommunenavn, gnr, bnr, null, areal, eier); // kaller den andre konstruktøren
     }
 
-    public Eiendommer(int kommunenr, String kommunenavn, int gnr, int bnr, String bruksn, double areal, String eier){
+    public Eiendommer(int kommunenr, String kommunenavn, int gnr, int bnr, String bruksnavn, double areal, String eier){
         this.kommunenr = kommunenr;
         this.kommunenavn = kommunenavn;
         this.gnr = gnr;
         this.bnr = bnr;
-        this.bruksn = bruksn;
+        this.bruksnavn = bruksnavn;
         this.areal = areal;
         this.eier = eier;
     }
@@ -36,7 +36,7 @@ public class Eiendommer{
         return bnr;
     }
     public String getBruksnr(){
-        return bruksn;
+        return bruksnavn;
     }
     public double getAreal(){ 
         return areal;
@@ -44,8 +44,9 @@ public class Eiendommer{
     public String getEier(){ 
         return eier;
     }
-    public void setBruksnr(String bruksnr){
-        this.bruksn = bruksn;
+    //legger til bruksnavn hvis det manglet
+    public void setBruksnavn(String bruksnavn){
+        this.bruksnavn = bruksnavn;
     }
     public void setAreal(double areal) {
         if (areal > 0){
@@ -64,7 +65,7 @@ public class Eiendommer{
 
     @Override
     public String toString(){
-        return kommunenavn + " | " + kommunenr + " | " + gnr + " | " + bnr + " | " + (bruksn != null ? " | " + bruksn : "") + " | " + areal + " | " + eier;
+        return kommunenavn + " | " + kommunenr + " | " + gnr + " | " + bnr + " | " + (bruksnavn != null ? " | " + bruksnavn : "") + " | " + areal + " | " + eier;
     }
 
 }
