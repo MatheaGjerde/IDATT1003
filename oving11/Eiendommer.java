@@ -63,6 +63,9 @@ public class Eiendommer{
         }
     }
 
+    public String eiendomsID(){
+        return kommunenr + "-" + gnr + "/" + bnr;
+    }
     @Override
     public String toString(){
         return kommunenavn + " | " + kommunenr + " | " + gnr + " | " + bnr + " | " + (bruksnavn != null ? " | " + bruksnavn : "") + " | " + areal + " | " + eier;
