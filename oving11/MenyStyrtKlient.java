@@ -55,8 +55,11 @@ public class MenyStyrtKlient{
                     }
                     case 3 -> {
                         System.out.print("Skriv inn kommunenr, gner og bnr: ");
+                        System.out.println("kommunenr: ");
                         int kommunenr1 = sc.nextInt();
+                        System.out.println("Gårdsnr:");
                         int gnr1 = sc.nextInt();
+                        System.out.println("Bruksnr: ");
                         int bnr1 = sc.nextInt();
                         sc.nextLine();
                         Eiendommer funnet = register.finnEiendom(kommunenr1, gnr1, bnr1);
