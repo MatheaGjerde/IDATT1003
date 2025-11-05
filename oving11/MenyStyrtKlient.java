@@ -1,5 +1,6 @@
 package oving11;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MenyStyrtKlient{
@@ -14,12 +15,13 @@ public class MenyStyrtKlient{
 
             do {
                 System.out.println("\n--- Property Register Application v0.1 ---\n");
-                System.out.println("1. Add property");
-                System.out.println("2. List all properties");
-                System.out.println("3. Search property");
-                System.out.println("4. Calculate average area");
+                System.out.println("1. Legg til eiendom");
+                System.out.println("2. Liste av eiendommene");
+                System.out.println("3. Søk eiendom");
+                System.out.println("4. Gjennomsnittlig areal av alle eiendommene");
+                System.out.println("5. Søk etter eiendom med gårdsnummer");
                 System.out.println("0. Quit");
-                System.out.print("\n Enter a number between 1 and 4, 0 for quit.\n");
+                System.out.print("\n Skriv et tall mellom 1 and 5, 0 for å avslutte.\n");
                 valg = sc.nextInt();
                 sc.nextLine(); // for å lese linjeskift etter nextInt()
 
@@ -73,6 +75,20 @@ public class MenyStyrtKlient{
                     case 4 -> {
                         System.out.println("Gjennomsnittsareal av alle eiendommene: ");
                         System.out.println(register.gjennomsnittsAreal());
+                    }
+                    case 5 -> {
+                        System.out.print("Skriv inn gårdsnummer: ");
+                        int sokGnr = sc.nextInt();
+                        sc.nextLine();
+                        List<Eiendommer> resultat = register.finnEiendommerMedGnr(sokGnr);
+                        if (resultat.isEmpty()) {
+                            System.out.println("Ingen eiendommer med gårdsnummer " + sokGnr);
+                        } else {
+                            System.out.println("Eiendommer med gårdsnummer " + sokGnr + ":");
+                            for (Eiendommer e : resultat) {
+                                System.out.println(e);
+                            }
+                        }
                     }
                     case 0 -> System.out.println("Avslutter programmet.");
 
