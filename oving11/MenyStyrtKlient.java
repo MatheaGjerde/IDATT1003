@@ -24,7 +24,7 @@ public class MenyStyrtKlient{
                 sc.nextLine(); // for å lese linjeskift etter nextInt()
 
                 switch (valg) {
-                    case 1:
+                    case 1 -> {
                         System.out.print("Kommunenavn: ");
                         String kommunenavn = sc.nextLine();
                         System.out.print("Kommunenr: ");
@@ -46,14 +46,14 @@ public class MenyStyrtKlient{
 
                         register.addEiendom(new Eiendommer(kommunenavn, kommunenr, gnr, bnr, bruksnavn, areal, eier));
                         System.out.println("Eiendom lagt til!");
-                        break;
-                    case 2: 
+                    }
+                    case 2 -> { 
                         System.out.println("\nListe over alle Eiendommer");
                         for (Eiendommer a : register.getEiendommer()){
                             System.out.println(a);
                         }
-                        break;
-                    case 3:
+                    }
+                    case 3 -> {
                         System.out.print("Skriv inn kommunenr, gner og bnr: ");
                         int kommunenr1 = sc.nextInt();
                         int gnr1 = sc.nextInt();
@@ -65,19 +65,15 @@ public class MenyStyrtKlient{
                         }else{
                             System.out.println("Fant ingen eiendom med disse tallene.");
                         }
+                    }
 
-                        break;
-
-                    case 4:
+                    case 4 -> {
                         System.out.println("Gjennomsnittsareal av alle eiendommene: ");
                         System.out.println(register.gjennomsnittsAreal());
-                        break;
-                    case 0:
-                        System.out.println("Avslutter programmet.");
-                        break;
+                    }
+                    case 0 -> System.out.println("Avslutter programmet.");
 
-                    default:
-                        System.out.println("Ugyldig valg. Prøv igjen.");
+                    default -> System.out.println("Ugyldig valg. Prøv igjen.");
                 }
             } while (valg != 0);
         }
