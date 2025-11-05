@@ -9,13 +9,13 @@ public class Eiendommer{
     private double areal;
     private String eier;
 
-    public Eiendommer(int kommunenr, String kommunenavn, int gnr, int bnr, double areal, String eier) {
-        this(kommunenr, kommunenavn, gnr, bnr, null, areal, eier); // kaller den andre konstruktøren
+    public Eiendommer(String kommunenavn, int kommunenr, int gnr, int bnr, double areal, String eier) {
+        this(kommunenavn, kommunenr, gnr, bnr, null, areal, eier); // kaller den andre konstruktøren
     }
 
-    public Eiendommer(int kommunenr, String kommunenavn, int gnr, int bnr, String bruksnavn, double areal, String eier){
-        this.kommunenr = kommunenr;
+    public Eiendommer(String kommunenavn, int kommunenr, int gnr, int bnr, String bruksnavn, double areal, String eier){
         this.kommunenavn = kommunenavn;
+        this.kommunenr = kommunenr;
         this.gnr = gnr;
         this.bnr = bnr;
         this.bruksnavn = bruksnavn;
