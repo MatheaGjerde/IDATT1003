@@ -68,7 +68,22 @@ public class Eiendommer{
     }
     @Override
     public String toString(){
-        return kommunenavn + " | " + kommunenr + " | " + gnr + " | " + bnr + " | " + (bruksnavn != null ? " | " + bruksnavn : "") + " | " + areal + " | " + eier;
+        StringBuilder sb = new StringBuilder();
+        sb.append(kommunenavn)
+        .append(" | ").append(kommunenr)
+        .append(" | ").append(gnr)
+        .append(" | ").append(bnr);
+        
+        if (bruksnavn != null && !bruksnavn.isEmpty()) {
+            sb.append(" | ").append(bruksnavn);
+        } else{
+            sb.append(" | ---------");
+        }
+        
+        sb.append(" | ").append(areal)
+        .append(" | ").append(eier);
+        
+        return sb.toString();
     }
 
 }
